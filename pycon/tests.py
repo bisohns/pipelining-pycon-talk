@@ -1,7 +1,7 @@
 from unittest.mock import patch
 from django.shortcuts import reverse
 from django.test import TestCase, Client
-from pycon import demo
+from pycon.utils import display, demo
 
 
 
@@ -18,9 +18,8 @@ class PyconViewTest(TestCase):
 
 class TestDisplay(TestCase):
 
-    @patch('pycon.display')
-    def test_display(self, display):
+    @patch('pycon.utils.Screen.wrapper')
+    def test_display(self, screen):
         """ Test that display function is called when demo is executed """
         demo()
-        display.assert_called()
-
+        screen.assert_called_with(display)

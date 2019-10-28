@@ -22,6 +22,3 @@ def display(screen):
 
 def demo():
     Screen.wrapper(display)
-
-if __name__ == '__main__':
-    Screen.wrapper(display)

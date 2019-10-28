@@ -10,13 +10,18 @@ services:
 install:
   - pip install -r requirements.txt
 
-script: cd pipeline && python manage.py test
+script: python manage.py test
 
-## Deploy to PYPI
-#deploy:
-#  provider: pypi
-#  user: "deven96"
-#  password: $PYPI_PASSWORD
-#  on:
-#    tags: true
-#  skip_existing: true
+deploy:
+  ## Deploy to PYPI Test
+  - provider: pypi
+    user: "mensaah"
+    password: $PYPI_PASSWORD
+    on:
+      tags: true
+    skip_existing: true
+    server: https://test.pypi.org/legacy/
+#  - provider: heroku
+#    install: skip
+#    api_key: $HEROKU_PRODUCTION_API_KEY
+#    app: $HEROKU_APP_NAME
