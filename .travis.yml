@@ -7,10 +7,13 @@ python:
 services:
   - postgresql
 
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+
 install:
   - pip install -r requirements.txt
 
-script: python manage.py test
+script: python manage.py test --settings pipeline.settings.travis
 
 deploy:
   ## Deploy to PYPI Test
@@ -21,7 +24,9 @@ deploy:
       tags: true
     skip_existing: true
     server: https://test.pypi.org/legacy/
-#  - provider: heroku
-#    install: skip
-#    api_key: $HEROKU_PRODUCTION_API_KEY
-#    app: $HEROKU_APP_NAME
+  - provider: heroku
+    on:
+      tags: true
+    install: skip
+    api_key: $HEROKU_PRODUCTION_API_KEY
+    app: $HEROKU_APP_NAME
