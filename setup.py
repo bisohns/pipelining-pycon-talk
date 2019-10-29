@@ -13,7 +13,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pycon-2019",
-    version='1.0.1',
+    version='1.0.2',
     author='Domnan Diretnan, Mmadu Manasseh',
     author_email="diretnandomnan@gmail.com",
     description="Welcome to Pycon Nigeria 2019",
