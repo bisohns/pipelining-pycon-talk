@@ -1,6 +1,6 @@
 # pipelining-pycon-talk
 This repo contains the source code of the demos of the talk on `End to End Workflows` presented at Pycon Nigeria 2019
-
+View the [Powerpoint presentation](https://drive.google.com/open?id=17-w5oIWQ-O4aVWivOGecywH2eb3IHn9jx-l5fxwnR6g)
 
 <!--[![PyPI version](https://badge.fury.io/py/search-engine-parser.png)](https://badge.fury.io/py/search-engine-parser)-->
 [![Build Status](https://travis-ci.com/bisoncorps/pipelining-pycon-talk.svg?branch=master)](https://travis-ci.com/bisoncorps/pipelining-pycon-talk)
