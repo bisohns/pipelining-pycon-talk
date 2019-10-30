@@ -13,7 +13,11 @@ before_script:
 install:
   - pip install -r requirements.txt
 
+# Test Application
 script: python manage.py test --settings pipeline.settings.travis
+
+# Generate Docs
+after_script: cd docs && make html
 
 deploy:
   ## Deploy to PYPI Test
@@ -24,9 +28,19 @@ deploy:
       tags: true
     skip_existing: true
     server: https://test.pypi.org/legacy/
+  ## Deploy to Heroku
   - provider: heroku
     on:
       tags: true
     install: skip
     api_key: $HEROKU_PRODUCTION_API_KEY
     app: $HEROKU_APP_NAME
+  ## Deploy to Github Pages
+  - provider: pages
+    local_dir: docs/build/html
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    keep_history: true
+    on:
+      branch: master
+      tags: true
