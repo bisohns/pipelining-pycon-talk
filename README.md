@@ -11,7 +11,7 @@ This repo contains the source code of the demos of the talk on `End to End Workf
 
 ## Installation
 Installation can be done from [Test PyPi](https://test.pypi.org)
-```python
+```bash
 pip install --index-url https://test.pypi.org/simple/ pycon-ng2019 
 ```
 
