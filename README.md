@@ -14,6 +14,18 @@ Installation can be done from [Test PyPi](https://test.pypi.org)
 ```bash
 pip install --index-url https://test.pypi.org/simple/ pycon-ng2019 
 ```
+### Development
+- Install Development dependencies. Update the settings in the [manage.py](https://github.com/bisoncorps/pipelining-pycon-talk/blob/a3067872d7c8bb4f9d5f62273a71946691d69131/manage.py#L8) file to `django.settings.common` 
+
+```bash
+pip install -r requirements.txt
+```
+
+- Start Server
+
+```bash
+python manage.py runserver
+```
 
 ## Usage
 
@@ -25,7 +37,7 @@ pip install --index-url https://test.pypi.org/simple/ pycon-ng2019
 ![CLI Image](assets/cli.gif)
 
 ### Django App
-- Add `pycon` to installed_apps
+- Add `pycon` to `installed_apps`
 - Add `path('', include('pycon.urls'))` to urls file
 
 ![Django Image](assets/django.gif)
