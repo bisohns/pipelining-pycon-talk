@@ -18,7 +18,8 @@ pip install --index-url https://test.pypi.org/simple/ pycon-ng2019
 - Install Development dependencies. Update the settings in the [manage.py](https://github.com/bisoncorps/pipelining-pycon-talk/blob/a3067872d7c8bb4f9d5f62273a71946691d69131/manage.py#L8) file to `django.settings.common` 
 
 ```bash
-pip install -r requirements.txt
+# install Dev dependencies
+pip install -r dev-requirements.txt
 ```
 
 - Start Server
